@@ -3,10 +3,12 @@
   import Footer from "@/Layouts/Footer.vue";
   import Nav from "@/Layouts/Nav.vue";
   import Main from "@/Pages/Main.vue";
+
+  const emit = defineEmits(['open-modal']);
 </script>
 
 <template>
-  <Header />
+  <Header @open-modal="emit('open-modal')"/>
   <Nav />
     <slot />
   <Footer />

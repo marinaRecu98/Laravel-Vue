@@ -1,12 +1,22 @@
 <script setup>
 
 import Layout from "@/Layouts/Layout.vue";
+import {usePage, Link} from "@inertiajs/vue3";
+import {computed, ref} from "vue";
+
+const user = computed(()=>usePage().props.auth.user);
+
+const showLogin = ref(false);
 
 </script>
 
 <template>
-  <Layout>
-    <div
+  <Layout @open-modal='showLogin=true'>
+    <div v-if="user">
+
+    </div>
+
+    <div v-else
         class="hero min-h-screen"
         style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
     >
@@ -22,6 +32,11 @@ import Layout from "@/Layouts/Layout.vue";
         </div>
       </div>
     </div>
+
+    <Modal :show="showLogin">
+      <Login/>
+    </Modal>
+
   </Layout>
 
 </template>

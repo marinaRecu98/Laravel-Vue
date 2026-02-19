@@ -1,0 +1,1 @@
+import{_ as a}from"./Layout-DH-fToOW.js";import{_ as t}from"./ProjectForm-Cy6lWI51.js";import{c as e,w as r,a as o,o as _}from"./app-DKqsgQv4.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const l={__name:"Create",setup(s){return(c,m)=>(_(),e(a,null,{default:r(()=>[o(t)]),_:1}))}};export{l as default};

@@ -24,7 +24,7 @@ const submit = ()=> {
     <div class="card w-full max-w-2xl bg-base-100 shadow-xl">
       <div class="card-body">
         <h2 class="card-title text-2xl font-bold">
-          {{ form.id ? "Editar Proyecto" : "Nuevo Proyecto" }}
+          {{ props.project ? "Editar Proyecto" : "Nuevo Proyecto" }}
         </h2>
 
         <form @submit.prevent="submit" class="space-y-4">

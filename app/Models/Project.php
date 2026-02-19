@@ -20,4 +20,24 @@ class Project extends Model
             "starting_date" =>"Fecha de inicio"
         ];
     }
+
+    protected $appends = ['routes'];
+
+    public function getRoutesAttribute()
+    {
+        return [
+            'edit' => route('projects.edit', $this->id),
+            'update' => route('projects.update', $this->id),
+            'delete' => route('projects.destroy', $this->id),
+        ];
+    }
+
+    public static function getGlobalRoutes()
+    {
+        return [
+            'index' => route('projects.index'),
+            'create' => route('projects.create'),
+            'store' => route('projects.store'),
+        ];
+    }
 }

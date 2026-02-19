@@ -17,7 +17,10 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->randomElement(['Campaña de Navidad', 'Pastelería Creativa', 'Pan Artesano Pro', 'Expansión de Sucursal', 'Taller de Cupcakes']),
+            'description' => fake()->paragraph(),
+            'hours' => fake()->numberBetween(20, 100),
+            'starting_date' => fake()->date(),
         ];
     }
 }

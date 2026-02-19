@@ -1,0 +1,1 @@
+import{_ as r}from"./ProjectForm-Cy6lWI51.js";import{_ as e}from"./Layout-DH-fToOW.js";import{c,w as a,a as p,o as s}from"./app-DKqsgQv4.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const u={__name:"Edit",props:{project:Object},setup(t){const o=t;return(_,m)=>(s(),c(e,null,{default:a(()=>[p(r,{project:o.project},null,8,["project"])]),_:1}))}};export{u as default};

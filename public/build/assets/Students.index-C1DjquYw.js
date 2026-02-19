@@ -1,0 +1,1 @@
+import{_ as e}from"./Layout-DH-fToOW.js";import{c as t,w as a,a as s,b as r,h as o,o as n}from"./app-DKqsgQv4.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const f={__name:"Students.index",props:{},setup(_){return(c,p)=>(n(),t(e,null,{default:a(()=>[s(r(o),{title:"Students.index"})]),_:1}))}};export{f as default};

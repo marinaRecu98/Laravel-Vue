@@ -6,7 +6,7 @@ import ProjectForm from "@/Components/ProjectForm.vue";
 
 <template>
 <Layout>
-
+  <ProjectForm />
 </Layout>
 </template>
 

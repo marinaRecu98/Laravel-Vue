@@ -14,11 +14,19 @@ class ProjectController extends Controller
      * @param $fieldlabels
      * @return \Inertia\Response
      */
-    public function index($fieldlabels)
+    public function index()
     {
         $projects = Project::all();
         $fields = Project::fieldlabels();
-        return Inertia::render('Projects/index', ['projects' => $projects, 'fieldsLabels' => $fieldlabels]);
+        $modelMetadata = [
+            'name' => 'Proyecto',
+            'routes' => Project::getGlobalRoutes()
+        ];
+        return Inertia::render('Projects/index', [
+            'rows' => $projects,
+            'fields' => $fields,
+            'model' => $modelMetadata
+        ]);
     }
 
     /**
@@ -27,7 +35,6 @@ class ProjectController extends Controller
     public function create()
     {
         return Inertia::render('Projects/Create');
-        //
     }
 
     /**
@@ -35,7 +42,8 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        Project::create($request->validated());
+        return redirect()->route('projects.index');
     }
 
     /**
@@ -43,7 +51,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return Inertia::render('Projects/Show', ['project' => $project]);
     }
 
     /**
@@ -52,7 +60,6 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         return Inertia::render('Projects/Edit', ['project' => $project]);
-        //
     }
 
     /**
@@ -60,7 +67,8 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $project->update($request->validated());
+        return redirect()->route('projects.index');
     }
 
     /**
@@ -69,7 +77,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return back();
-        //
+        return redirect()->route('projects.index');
     }
 }
